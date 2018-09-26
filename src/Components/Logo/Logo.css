@@ -1,0 +1,24 @@
+.Tilt {
+    background: #EB3349;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #F45C43, #EB3349);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #F45C43, #EB3349);
+
+}
+
+.cont {
+    display: flex;
+    width: 90%;
+    text-align: center;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.main-header {
+    align-self: center;
+    font-size: 30px;
+    font-weight: 700;
+    color: aliceblue;
+    text-shadow: 4px 4px 8px 0 rgba(0, 0, 0, .2);
+}

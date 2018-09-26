@@ -1,0 +1,96 @@
+import React, { Component } from 'react';
+import './App.css';
+import Input from './Components/Input'
+
+const date = ()=>{}
+class App extends Component {
+  state = {
+    inputValue:"",
+    title:'To-Do-List App',
+    options:[{value:"hello",done:true},{ value:" hey", done:false}],
+    time:new Date(),
+    searching:''
+  }
+  filterOptions(keywords){
+    console.log(keywords)
+  }
+ date = ()=>{
+  let d = new Date();
+  let n = d.getTime();
+ }
+  Changed = (e)=>{
+    this.setState({
+      inputValue: e.target.value
+    })
+  }
+  addoption = (e)=>{
+    e.preventDefault();
+    const newOption ={
+      value:this.state.inputValue,
+      done:false
+    }
+   const options = this.state.options;
+   options.push(newOption);
+   this.setState({
+     options:options
+   })
+      e.target.elements.option.value=""
+    
+  }
+  delete = (itemIndex)=>{
+    const options =this.state.options
+    options.splice(itemIndex,1)
+    this.setState({options:options})
+  }
+  searching=(e)=>{
+    this.setState({
+      searching:e.target.value
+    })
+    console.log(e.target)
+
+  }
+ 
+  
+  render() {
+  var searching = this.state.searching.trim().toLowerCase();
+  if (searching.length>0){
+    this.state.options = this.state.options.filter(function(i){
+      return i.value.toLowerCase().match( searching)
+    })
+  }
+    return (
+      <div className="">
+        <h1>{this.state.title}</h1>
+        <Input searching={this.searching} Changed = {this.Changed} addoption={this.addoption}/>
+        <ol>
+        {
+          this.state.options.map((option,index)=>{
+            return <li key={index} index={index}>
+            <span style={{background: option.done? "green" :"red"}}>
+             {option.value} 
+             </span><p>{this.state.time.toLocaleDateString()}</p>
+            <button onClick={()=>this.delete(index)} >Remove</button> 
+            <button onClick={()=>this.completed(index)}> {option.done ? "undo":"completed"}</button>
+            </li>
+          })
+        }
+        
+        </ol>
+      </div>
+    );
+  }
+  completed =(index)=>{
+
+    console.log("clicked",index)
+    const options = this.state.options;
+    options[index].done = !options[index].done;
+    this.setState({
+      options:this.state.options
+    })
+    this.setState({ state: this.state });
+  
+  }
+}
+
+
+export default App;

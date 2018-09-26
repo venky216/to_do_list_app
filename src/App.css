@@ -1,0 +1,68 @@
+.container-wrap {
+  width: 100%;
+  margin: 0 auto;
+  padding: 1em;
+  
+  box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, .2);
+}
+
+.cont-wrap {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em 1em 0 1em;
+  width: 90%;
+  margin: 0 auto;
+  padding-left: 15px;
+  border-radius: 6px;
+  border: none;
+  color: #0F0D0D;
+  font-weight: 500;
+  background-color: #fff;
+  margin-bottom: 1em;
+  box-shadow:4px 4px 8px 0 rgba(0, 0, 0, .2);
+}
+
+.left-wrap {
+  align-self: flex-start;
+}
+
+.text-for {
+  align-self: flex-start;
+}
+
+.btn {
+  display: inline-block;
+  margin: 20px;
+  padding: .5rem 1em;
+  font-family: 'Heebo', Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  border-radius: 10px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  line-height: 24px;
+  color: #ffffff;
+  background: linear-gradient(180deg, #fa7e29 0%, #F6682F 80%, #F6682F 100%);
+  text-shadow: 0px 0px 1px #BF4C28;
+
+}
+
+button,
+input[type="submit"],
+input[type="reset"] {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
+.btn-1 {
+  background: linear-gradient(180deg, #29faa3 0%, rgb(51, 182, 127) 80%, rgba(43, 134, 112, 0.788) 100%) !important;
+}
+.created-text{
+  color: rgb(107, 99, 90);
+  font-size: 14px;
+}
